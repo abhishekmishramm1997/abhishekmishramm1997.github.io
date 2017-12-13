@@ -1,0 +1,60 @@
+nav.navbar.navbar-default{
+  color:#0d3862;
+}
+
+img#logo{
+  padding:4px;
+  border:0;
+  max-height:40px;
+  padding-bottom:4px;
+}
+
+body{
+}
+
+div.jumbotron{
+  font-family:Georgia,Times,Times New Roman,serif;
+}
+
+div#welcome.jumbotron{
+  font-family:Georgia, serif;
+}
+
+button#lm.btn.btn-primary{
+  align-content:center;
+  align-self:center;
+}
+
+p.lm{
+  align-content:center;
+}
+
+nav.navbar.navbar-default.navbar-static-top{
+  font family:'Open Sans', sans-serif;
+}
+
+nav.navbar.navbar-default.navbar-static-top{
+  font-family:'Open Sans', sans-serif;
+}
+
+h1.text-center{
+  font-family:Georgia;
+  color:#c4122f;
+}
+
+p.text-center{
+  color:#0d3862;
+}
+
+nav.navbar.navbar-default.navbar-static-top{
+  color:#0d3862;
+}
+
+button.btn.btn-primary.btn-lg{
+  background-color:#0d3862;
+}
+
+h1#room_head{
+  font-family:Open Sans;
+}
+

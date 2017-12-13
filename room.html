@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashoka CMS</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/mystyles.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Registration-Form.css">
+</head>
+
+<body>
+    
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand navbar-link" href="index.html" target="_top"> <img src="assets/img/logo white.png" id="logo"></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li role="presentation"><a href="mess menu.html" id="select">Mess Menu</a></li>
+                    <li role="presentation"><a href="outlets.html">Food Outlets</a></li>
+                    <li class="active" role="presentation"><a href="#">Room Booking</a></li>
+                    <li role="presentation"><a href="verify.html">Shuttle Booking</a></li>s
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row register-form">
+        <div class="col-md-8 col-md-offset-2">
+            <form action = "/RoomBooking.py" method = "GET" class="form-horizontal custom-form">
+            	
+                <h1 class="text-uppercase" id="room_head">Room Booking</h1>
+                </br>
+                <div class="form-group">
+                    <div class="col-sm-4 label-column">
+                        <label class="control-label" for="name-input-field">Name </label>
+                    </div>
+                    <div class="col-sm-6 input-column">
+                        <input class="form-control" type="text" name="Name" required="">
+                    </div>
+                </div>
+                </br>
+                <div class="form-group">
+                    <div class="col-sm-4 label-column">
+                        <label class="control-label" for="email-input-field">Email </label>
+                    </div>
+                    <div class="col-sm-6 input-column">
+                        <input class="form-control" type="email" name="Ashoka_ID" required="" autofocus="" inputmode="email">
+                    </div>
+                </div>
+                </br>
+                <div class="form-group">
+                    <div class="col-sm-4 label-column">
+                        <label class="control-label" for="purpose-input-field">Purpose </label>
+                    </div>
+                    <div class="col-sm-6 input-column">
+                        <textarea class="form-control" name="Purpose" required=""></textarea>
+                    </div>
+                </div>
+                </br>
+                <div class="form-group">
+                    <div class="col-sm-4 label-column">
+                        <label class="control-label" for="capacity-input-field">Room Capacity:</label>
+                    </div>
+                    <div class="col-sm-6 input-column">
+                        <select class="form-control" name="Capacity">
+                            <optgroup label="Choose Capacity">
+                                <option value="25" selected="">25</option>
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="200">200</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                </br>
+                <div class="form-group">
+                    <div class="col-sm-4 label-column">
+                        <label class="control-label" for="day-input-field">Day </label>
+                    </div>
+                    <div class="col-md-6 col-md-offset-0 col-sm-6 input-column">
+                        <select class="form-control" name="Day" required="">
+                            <optgroup label="Choose Day">
+                                <option value="Monday">Monday</option>
+                                <option value="Tuesday">Tuesday</option>
+                                <option value="Wednesday">Wednesday</option>
+                                <option value="Thursday">Thursday</option>
+                                <option value="Friday">Friday</option>
+                                <option value="Saturday">Saturday</option>
+                                <option value="Sunday">Sunday</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                </br>
+                <div class="form-group">
+                    <div class="col-sm-4 label-column">
+                        <label class="control-label" for="stime-input-field">Start Time </label>
+                    </div>
+                    <div class="col-sm-6 input-column">
+                        <select class="form-control" name="Start_Time">
+                            <optgroup label="Choose Start Time">
+                                <option value="0:00" selected="">0:00</option>
+                                <option value="0:30">0:30</option>
+                                <option value="1:00">1:00</option>
+                                <option value="1:30">1:30</option>
+                                <option value="2:00">2:00</option>
+                                <option value="2:30">2:30</option>
+                                <option value="3:00">3:00</option>
+                                <option value="3:30">3:30</option>
+                                <option value="4:00">4:00</option>
+                                <option value="4:30">4:30</option>
+                                <option value="5:00">5:00</option>
+                                <option value="5:30">5:30</option>
+                                <option value="6:00">6:00</option>
+                                <option value="6:30">6:30</option>
+                                <option value="7:00">7:00</option>
+                                <option value="7:30">7:30</option>
+                                <option value="8:00">8:00</option>
+                                <option value="8:30">8:30</option>
+                                <option value="9:00">9:00</option>
+                                <option value="9:30">9:30</option>
+                                <option value="10:00">10:00</option>
+                                <option value="10:30">10:30</option>
+                                <option value="11:00">11:00</option>
+                                <option value="11:30">11:30</option>
+                                <option value="12:00">12:00</option>
+                                <option value="12:30">12:30</option>
+                                <option value="13:00">13:00</option>
+                                <option value="13:30">13:30</option>
+                                <option value="14:00">14:00</option>
+                                <option value="14:30">14:30</option>
+                                <option value="15:00">15:00</option>
+                                <option value="15:30">15:30</option>
+                                <option value="16:00">16:00</option>
+                                <option value="16:30">16:30</option>
+                                <option value="17:00">17:00</option>
+                                <option value="17:30">17:30</option>
+                                <option value="18:00">18:00</option>
+                                <option value="18:30">18:30</option>
+                                <option value="19:00">19:00</option>
+                                <option value="19:30">19:30</option>
+                                <option value="20:00">20:00</option>
+                                <option value="20:30">20:30</option>
+                                <option value="21:00">21:00</option>
+                                <option value="21:30">21:30</option>
+                                <option value="22:00">22:00</option>
+                                <option value="22:30">22:30</option>
+                                <option value="23:00">23:00</option>
+                                <option value="23:30">23:30</option>
+
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                </br>
+                <div class="form-group">
+                    <div class="col-sm-4 label-column">
+                        <label class="control-label" for="etime-input-field">End Time </label>
+                    </div>
+                    <div class="col-sm-6 input-column">
+                        <select class="form-control" name="End_Time">
+                            <optgroup label="Choose Start Time">
+                                <option value="0:00" selected="">0:00</option>
+                                <option value="0:30">0:30</option>
+                                <option value="1:00">1:00</option>
+                                <option value="1:30">1:30</option>
+                                <option value="2:00">2:00</option>
+                                <option value="2:30">2:30</option>
+                                <option value="3:00">3:00</option>
+                                <option value="3:30">3:30</option>
+                                <option value="4:00">4:00</option>
+                                <option value="4:30">4:30</option>
+                                <option value="5:00">5:00</option>
+                                <option value="5:30">5:30</option>
+                                <option value="6:00">6:00</option>
+                                <option value="6:30">6:30</option>
+                                <option value="7:00">7:00</option>
+                                <option value="7:30">7:30</option>
+                                <option value="8:00">8:00</option>
+                                <option value="8:30">8:30</option>
+                                <option value="9:00">9:00</option>
+                                <option value="9:30">9:30</option>
+                                <option value="10:00">10:00</option>
+                                <option value="10:30">10:30</option>
+                                <option value="11:00">11:00</option>
+                                <option value="11:30">11:30</option>
+                                <option value="12:00">12:00</option>
+                                <option value="12:30">12:30</option>
+                                <option value="13:00">13:00</option>
+                                <option value="13:30">13:30</option>
+                                <option value="14:00">14:00</option>
+                                <option value="14:30">14:30</option>
+                                <option value="15:00">15:00</option>
+                                <option value="15:30">15:30</option>
+                                <option value="16:00">16:00</option>
+                                <option value="16:30">16:30</option>
+                                <option value="17:00">17:00</option>
+                                <option value="17:30">17:30</option>
+                                <option value="18:00">18:00</option>
+                                <option value="18:30">18:30</option>
+                                <option value="19:00">19:00</option>
+                                <option value="19:30">19:30</option>
+                                <option value="20:00">20:00</option>
+                                <option value="20:30">20:30</option>
+                                <option value="21:00">21:00</option>
+                                <option value="21:30">21:30</option>
+                                <option value="22:00">22:00</option>
+                                <option value="22:30">22:30</option>
+                                <option value="23:00">23:00</option>
+                                <option value="23:30">23:30</option> 
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                </br>
+                </br>
+                <a href = "/Applications/XAMPP/xamppfiles/htdocs/RoomBooking.py"> <button class="btn btn-primary btn-block" type="submit">Book Room</button></a>
+
+            </form>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/myjs.js"></script>
+</body>
+
+</html>
