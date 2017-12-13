@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ashoka CMS</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Cookie">
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/mystyles.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
+    <link rel="stylesheet" href="assets/css/Pretty-Registration-Form.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-default navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand navbar-link" href="index.html" target="_top"> <img src="assets/img/logo white.png" height="40" id="logo"></a>
+                <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+            </div>
+            <div class="collapse navbar-collapse" id="navcol-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li role="presentation"><a href="mess menu.html" id="select">Mess Menu</a></li>
+                    <li class="active" role="presentation"><a href="#">Food Outlets</a></li>
+                    <li role="presentation"><a href="room.html">Room Booking</a></li>
+                    <li role="presentation"><a href="verify.html">Shuttle Booking</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div class="row register-form">
+        <div class="col-md-8 col-md-offset-2">
+            <form action = "/outlet.py" method = "GET" class="form-horizontal custom-form">
+                
+                <h1 class="text-uppercase" id="room_head">Food Outlets</h1>
+                </br>
+                <div class="form-group">
+                    <div class="col-sm-4 label-column">
+                        <label class="control-label" for="day-input-field">Food Outlets</label>
+                    </div>
+                    <div class="col-md-6 col-md-offset-0 col-sm-6 input-column">
+                        <select class="form-control" name="Outlet" required="">
+                            <optgroup label="Choose Food Outlet">
+                                <option value="THC">The Hunger Cycle</option>
+                                <option value="chitchat">Chit Chaat</option>
+                                <option value="chicago">Chicago Pizza</option>
+                                <option value="juicebar">Juice Bar</option>
+                                <option value="foodjunc">Food Junction</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-sm-4 label-column">
+                        <label class="control-label" for="budget-input-field">Budget</label>
+                    </div>
+                    <div class="col-md-6 col-md-offset-0 col-sm-6 input-column">
+                        <select class="form-control" name="Budget" required="">
+                            <optgroup label="Choose Budget">
+                                <option value="50">50</option>
+                                <option value="100">100</option>
+                                <option value="150">150</option>
+                                <option value="200">200</option>
+                                <option value="250">250</option>
+                            </optgroup>
+                        </select>
+                    </div>
+                </div>
+                <a href = "/Applications/XAMPP/xamppfiles/htdocs/outlet.py"> <button class="btn btn-primary btn-block" type="submit">I'm Feeling Hungry</button></a>
+
+            </form>
+        </div>
+    </div>
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/myjs.js"></script>
+</body>
+
+</html>

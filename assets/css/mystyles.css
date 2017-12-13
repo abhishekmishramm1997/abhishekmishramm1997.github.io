@@ -1,0 +1,21 @@
+nav.navbar.navbar-default.navbar-static-top{
+  background-color:#0d3862;
+}
+
+button.btn.btn-primary{
+  background-color:#0d3862;
+}
+
+footer#foot{
+  background-color:#0d3862;
+  font-family:Georgia;
+  text-align: center;
+}
+
+form.form-horizontal.custom-form{
+  font-family:Open Sans;
+}
+
+#display{
+	font-size: 36px;
+}
