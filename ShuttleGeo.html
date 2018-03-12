@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8' />
+    <title>Busiest Airports of India</title>
+    <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+    <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+    <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='main.js'></script>
+    <link href='main.css' rel='stylesheet' />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+    
+   
+
+    <style>
+            .redtext {
+        color: red;}
+        .purple {
+                color: 	#8A2BE2;
+        }
+        .green{
+                color: green;
+        }
+        .black{
+                color: black;        }
+
+
+
+                body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+    position: relative;
+    background-color: #fefefe;
+    margin: auto;
+    padding: 0;
+    border: 1px solid #888;
+    width: 80%;
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+    -webkit-animation-name: animatetop;
+    -webkit-animation-duration: 0.4s;
+    animation-name: animatetop;
+    animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+    from {top:-300px; opacity:0} 
+    to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+    from {top:-300px; opacity:0}
+    to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+    color: white;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-header {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+    padding: 2px 16px;
+    background-color: #5cb85c;
+    color: white;
+}
+
+table {
+    width:100%;
+}
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+th, td {
+    padding: 5px;
+    text-align: left;
+}
+table#t01 tr:nth-child(even) {
+    background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+   background-color:#fff;
+}
+table#t01 th {
+    background-color: black;
+    color: white;
+}
+
+.button {
+    background-color: #f44336; /* Red */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+.button1 {
+    background-color: #9836F4; /* Purple*/
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+
+}
+
+* {
+    box-sizing: border-box;
+}
+
+.zoom {
+    padding: 50px;
+    transition: transform .2s;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+}
+
+.zoom:hover {
+    -ms-transform: scale(3.0); /* IE 9 */
+    -webkit-transform: scale(3.0); /* Safari 3-8 */
+    transform: scale(3.0); 
+}
+
+
+         </style>   
+
+            <script type="text/javascript">
+    $(document).ready(function(){
+    $('[data-toggle="popover"]').popover();   
+    });
+    </script>
+    <style type="text/css">
+        .bs-example{
+            margin: 150px 50px;
+            text-align: center;
+        }
+        .popover-demo{
+            margin-bottom: 20px;
+
+        }
+    </style>      
+</head>
+<body>
+<div id='map'></div>
+<div id='features'>
+    <section id='part-1' class='active'>
+        <h3>SHUTTLE SCHEDULE</h3>
+        <p>&nbsp;</p>
+        <div class="zoom">
+        <img src='shuttle.jpg' width="100%"/> </div>
+
+     <p align="left">Ashoka Shuttle Buses are available from Jahangirpuri metro station(stop on Delhi metro line) between gate no. 3 and 4 to transport visitors to and from campus.</p>        
+    </section>
+    <section id='part-2'>
+        <h3>JAHANGIRPURI METRO</h3>
+        
+
+        <div class="dropdown">
+            <button class="dropbtn"> Jahangirpuri to Campus</button>
+            <div class="dropdown-content">
+                <iframe width="209" height="576" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=640F5B6FB6A804C%21829&authkey=%21AASCdgLBDu0gZSk&em=2&wdAllowInteractivity=False&Item=Table2&wdHideGridlines=True&wdInConfigurator=True"></iframe></div>
+
+    </div>
+              
+<p> &nbsp;</p>
+</section>
+
+<section id='part-3'>
+    <h3>ASHOKA UNIVERSITY</h3>
+    <p>&nbsp;</p>
+    <div class="dropdown">
+        <button class="dropbtn3"> Campus to Jahangirpuri</button>
+        <div class="dropdown-content">
+            <iframe width="228" height="576" frameborder="0" scrolling="no" src="https://onedrive.live.com/embed?resid=640F5B6FB6A804C%21829&authkey=%21AASCdgLBDu0gZSk&em=2&wdAllowInteractivity=False&ActiveCell='Sheet1'!D4&Item=Table3&wdHideGridlines=True&wdInConfigurator=True"></iframe></div>                    </div>
+</div>
+    
+</section>
+
+
+</div>
+<style>
+.dropbtn {
+    background-color: #4CAF50;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn1 {
+    background-color: #AF4C4C;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn2 {
+    background-color: #4C5BAF;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+.dropbtn3 {
+    background-color: #934CAF;
+    color: white;
+    padding: 16px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+}
+
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown:hover .dropbtn {
+    background-color: #3e8e41;
+}
+</style>
+
+
+
+
+
+
+
+    
+
+
+</style>
+<script src="assets/js/jquery.min.js"></script>
+<script src="assets/bootstrap/js/bootstrap.min.js"></script>
+<script src="assets/js/myjs.js"></script>
+</body>
+</html>
