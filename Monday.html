@@ -35,12 +35,20 @@
 
         }
 </style>
+<script>
+
+    function checkReload() {
+  if(document.cookie.indexOf('YOURCOOKIE')==-1) {
+    // cookie doesn't exist, create it now
+  }
+  else {
+    // not first visit, so alert
+    alert('You refreshed!');
+  }
+}
+</script>
 </head>
-
-<body>
-
-        
-                </head>
+<body onload="checkReload()">
                    
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container-fluid">
