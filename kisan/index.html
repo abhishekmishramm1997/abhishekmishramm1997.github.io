@@ -1,147 +1,101 @@
 <!DOCTYPE html>
-<html lang="en" >
-
+<html>
 <head>
-  <meta charset="UTF-8">
-  <title>Comparison table</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  
-  
-      <link rel="stylesheet" href="css/style.css">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body, html {
+    height: 100%;
+    margin: 0;
+}
 
-  
+.bg {
+    /* The image used */
+    background-image: url("farmer.jpg");
+
+    /* Full height */
+    height: 100%; 
+
+    /* Center and scale the image nicely */
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.container .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.container .btn:hover {
+    background-color: black;
+}
+
+.container .btn1 {
+    position: absolute;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.container .btn1:hover {
+    background-color: black;
+}
+
+.container .btn2 {
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #555;
+    color: white;
+    font-size: 16px;
+    padding: 12px 24px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+}
+
+.container .btn2:hover {
+    background-color: black;
+}
+</style>
 </head>
-
 <body>
 
-  <div class="comparison">
+<div class="bg">
+    <div class="container">
+      <a href="register.html">  <button class="btn">रजिस्टर करें </button></a>
+    <div>
+    <div class="container">    <a href="map.html"><button class="btn1">नज़दीकी सूक्ष्म वित्तीय संस्थान देखें </button></div></a>
+    <div class="container"> <a href="index2.html"><button class="btn2">ब्याज दर देखें </button></a>
 
-  <table>
-    <thead>
-      <tr>
-        <th class="tl tl2"></th>
-        <th class="qbse">
-          सरकारी सहकारी संस्थान 
-        </th>
-        <th colspan="3" class="qbo">
-          सहकारी संस्थान
-        </th>
-      </tr>
-      <tr>
-        <th class="tl"></th>
-        <th class="compare-heading">
-          SKS Finance
-        </th>
-        <th class="compare-heading">
-          Ganesh Co-operative
-        </th>
-        <th class="compare-heading">
-          Bhagwan Das Society Pvt. Ltd.
-        </th>
-        <th class="compare-heading">
-          GopalKrishnan Microfinance Pvt Ltd.
-        </th>
-      </tr>
-      <tr>
-        <th></th>
-        <th class="price-info">
-      <div class="price-now"><span>23%<span class="price-small"></span></span> /month</div>
-          <div><a href="#" class="price-buy">संपर्क
-            <span class="hide-mobile"> करें</span></a></div>
-        </th>
-        <th class="price-info">
-          <div class="price-now"><span>12%<span class="price-small"></span></span> /month</div>
-          <div><a href="#" class="price-buy">संपर्क<span class="hide-mobile"> करें</span></a></div>
-        </th>
-        <th class="price-info">
-          <div class="price-now"><span>12.5%<span class="price-small"></span></span> /month</div>
-          <div><a href="#" class="price-buy">संपर्क<span class="hide-mobile"> करें</span></a></div>
-        </th>
-        <th class="price-info">
-          <div class="price-now"><span>14%<span class="price-small"></span></span> /month</div>
-          <div><a href="#" class="price-buy">संपर्क<span class="hide-mobile"> करें</span></a></div>
-        </th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <td></td>
-        <td colspan="4">Seperate business from personal spending</td>
-      </tr>
-      <tr class="compare-row">
-        <td> ब्याज </td>
-        <td><span class="tickblue">✔</span></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td colspan="4">Estimate tax payments</td>
-      </tr>
-      <tr>
-        <td>वित्तीय सहायता </td>
-        <td><span class="tickblue">✔</span></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td colspan="4">Track deductible mileage</td>
-      </tr>
-      <tr class="compare-row">
-        <td>वित्तीय सहायता </td>
-        <td><span class="tickblue">✔</span></td>
-        <td></td>
-        <td></td>
-        <td></td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td colspan="4">वित्तीय सहायता </td>
-      </tr>
-      <tr>
-        <td>वित्तीय सहायता </td>
-        <td><span class="tickblue">✔</span></td>
-        <td><span class="tickgreen">✔</span></td>
-        <td><span class="tickgreen">✔</span></td>
-        <td><span class="tickgreen">✔</span></td>
-      </tr>
+      </div>
       
-     
-      
-      
-      <tr>
-        <td>&nbsp;</td>
-        <td colspan="4">आसान किश्तें </td>
-      </tr>
-      <tr>
-        <td>आसान किश्तें </td>
-        <td></td>
-        <td><span class="tickgreen">✔</span></td>
-        <td><span class="tickgreen">✔</span></td>
-        <td><span class="tickgreen">✔</span></td>
-      </tr>
-      <tr>
-        <td>&nbsp;</td>
-        <td colspan="4">खरीदने वाले </td>
-      </tr>
-      <tr class="compare-row">
-        <td>खरीदने वाले </td>
-        <td class="tickblue">10 </td>
-        <td class="tickgreen">54</td>
-        <td class="tickgreen">32</td>
-        <td class="tickgreen">5 </td>
-      </tr>
-      
-    </tbody>
-  </table>
-
 </div>
-  
-  
+
+
 
 </body>
-
 </html>
