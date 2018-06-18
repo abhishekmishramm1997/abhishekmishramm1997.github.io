@@ -46,7 +46,7 @@ float: right;
   <body>
 
     
-    <section id="focal">
+    <!-- <section id="focal">
             <div class="wrap">
                     <h1>Use the mousewheel to zoom on a focal point</h1>
                     <h2></h2>
@@ -105,7 +105,82 @@ float: right;
           });
         })();
       </script>
-    </section>
+    </section> -->
 
+
+    <section id="inverted-contain">
+            <div class="wrap">
+                    <h1>Use the Buttons to zoom in/out a focal point</h1>
+                    <h2></h2>
+
+                    <div class="floatleft"> 
+                            <h3>Ahmedabad Built Up 2000</h3>
+
+                            <div class="panzoom-parent">
+                              <img class="panzoom" src="Ahm2000.svg" width="100%" height="100%">
+                            </div>
+                            <div class="buttons">
+                              <button class="zoom-in">Zoom In</button>
+                              <button class="zoom-out">Zoom Out</button>
+                              <input type="range" class="zoom-range">
+                              <button class="reset">Reset</button>
+                            </div>                
+                    </div>
+                    
+                    <div class="floatright"> 
+                            <h3>Ahmedabad Built Up 2014-15</h3>
+
+            <div class="panzoom-parent">
+              <img class="panzoom1" src="Ahm2014.svg" width="100%" height="100%">
+            </div>
+            <div class="buttons">
+              <button class="zoom-in1">Zoom In</button>
+              <button class="zoom-out1">Zoom Out</button>
+              <input type="range" class="zoom-range1">
+              <button class="reset1">Reset</button>
+            </div>    
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+                
+            
+            <style>
+              #inverted-contain .panzoom1 { width: 100%; }
+              #inverted-contain .panzoom { width:100%; }
+
+            </style>
+            <script>
+              (function() {
+                var $section = $('#inverted-contain');
+                $section.find('.panzoom').panzoom({
+                  $zoomIn: $section.find(".zoom-in"),
+                  $zoomOut: $section.find(".zoom-out"),
+                  $zoomRange: $section.find(".zoom-range"),
+                  $reset: $section.find(".reset"),
+                  startTransform: 'scale(1.1)',
+                  increment: 0.1,
+                  minScale: 1,
+                  contain: 'invert'
+                }).panzoom('zoom');
+              })();
+            </script>
+            <script>
+                    (function() {
+                      var $section = $('#inverted-contain');
+                      $section.find('.panzoom1').panzoom({
+                        $zoomIn: $section.find(".zoom-in1"),
+                        $zoomOut: $section.find(".zoom-out1"),
+                        $zoomRange: $section.find(".zoom-range1"),
+                        $reset: $section.find(".reset1"),
+                        startTransform: 'scale(1.1)',
+                        increment: 0.1,
+                        minScale: 1,
+                        contain: 'invert'
+                      }).panzoom('zoom');
+                    })();
+                  </script>
+          </section>
+          <hr>
+            
 </body>
 </html>
