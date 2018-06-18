@@ -1,0 +1,111 @@
+    <!doctype html>
+<html>
+  <head>
+    <title>Ahmedabad Built-Up Area</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <style type="text/css">
+      body { background: #F5FCFF; color: #333666; }
+      section { text-align: center; margin: 50px 0; }
+      .panzoom-parent { border: 2px solid #333; }
+      .panzoom-parent .panzoom { border: 2px dashed #666; }
+      .buttons { margin: 40px 0 0; }
+
+      .panzoom-parent1 { border: 2px solid #333; }
+      .panzoom-parent1 .panzoom1 { border: 2px dashed #666; }
+      .buttons1 { margin: 40px 0 0; }
+
+      .panzoom-parent2 { border: 2px solid #333; }
+      .panzoom-parent2 .panzoom2 { border: 2px dashed #666; }
+      .buttons2 { margin: 40px 0 0; }
+    </style>
+    <script src="../test/libs/jquery.js"></script>
+    <script src="../dist/jquery.panzoom.js"></script>
+    <script src="../test/libs/jquery.mousewheel.js"></script>
+  </head>
+
+  <style>
+  .wrap {
+    width: 100%;
+}
+
+.wrap1 {
+    width: 100%;
+}
+
+.floatleft {
+    float:left; 
+    width: 49%;
+}
+
+.floatright {
+float: right;
+    width: 49%;
+}
+
+  </style>
+  <body>
+
+    
+    <section id="focal">
+            <div class="wrap">
+                    <h1>Use the mousewheel to zoom on a focal point</h1>
+                    <h2></h2>
+
+                    <div class="floatleft"> 
+                        <h3>Ahmedabad Built Up 2000</h3>
+                            <div class="parent">
+                              <div class="panzoom">
+                                <img src="Ahm2000.svg" width="100%" height="100%" >
+                              </div>
+                            </div>     
+                                                        
+                    </div>
+                    
+                    <div class="floatright"> 
+                            <h3>Ahmedabad Built Up 2014-15</h3>
+
+                            <div class="parent1">
+                                    <div class="panzoom1">
+                                      <img src="Ahm2014.svg" width="100%" height="100%" >
+                                    </div>
+                                  </div>     
+                                               
+                    </div>
+                    <div style="clear: both;"></div>
+                </div>
+     
+      <script>
+        (function() {
+          var $section = $('#focal');
+          var $panzoom = $section.find('.panzoom').panzoom();
+          $panzoom.parent().on('mousewheel.focal', function( e ) {
+            e.preventDefault();
+            var delta = e.delta || e.originalEvent.wheelDelta;
+            var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
+            $panzoom.panzoom('zoom', zoomOut, {
+              animate: false,
+              focal: e
+            });
+          });
+        })();
+      </script>
+
+<script>
+        (function() {
+          var $section = $('#focal');
+          var $panzoom = $section.find('.panzoom1').panzoom();
+          $panzoom.parent().on('mousewheel.focal', function( e ) {
+            e.preventDefault();
+            var delta = e.delta || e.originalEvent.wheelDelta;
+            var zoomOut = delta ? delta < 0 : e.originalEvent.deltaY > 0;
+            $panzoom.panzoom('zoom', zoomOut, {
+              animate: false,
+              focal: e
+            });
+          });
+        })();
+      </script>
+    </section>
+
+</body>
+</html>
