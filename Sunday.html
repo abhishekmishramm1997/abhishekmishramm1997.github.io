@@ -18,6 +18,9 @@
     <link rel="stylesheet" href="assets/css/mystyles.css">
     <link rel="stylesheet" href="assets/css/Pretty-Footer.css">
     <link rel="stylesheet" href="assets/css/Pretty-Registration-Form.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script type="text/javascript">
@@ -40,7 +43,6 @@
 <body>
 
         
-                </head>
                    
     <nav class="navbar navbar-default navbar-static-top">
         <div class="container-fluid">
@@ -48,14 +50,14 @@
                 <a class="navbar-brand navbar-link" href="index.html" target="_top"> <img src="assets/img/logo white.png" height="40" id="logo"></a>
                 <button class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navcol-1"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
             </div>
-            <div class="collapse navbar-collapse" id="navcol-1">
+            <!-- <div class="collapse navbar-collapse" id="navcol-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="active" role="presentation"><a href="#" id="select">Mess Menu</a></li>
                     <li role="presentation"><a href="outlets.html">Food Outlets</a></li>
                     <li role="presentation"><a href="room.html">Room Booking</a></li>
                     <li role="presentation"><a href="verify.html">Shuttle Booking</a></li>
                 </ul>
-            </div>
+            </div> -->
         </div>
     </nav>
     <div class="row register-form">
@@ -64,31 +66,151 @@
                    
                         <p><strong>Note:</strong> Click on the buttons to display the menu. To go back to the homepage, tap the Ashoka Logo on top-left.</p>
                         
-                        <div class="dropdown">
-                                <button class="dropbtn"> Breakfast</button>
-                                <div class="dropdown-content">
-                                        <iframe src='https://docs.zoho.com/sheet/publishrange.do?id=548181e8cc16f00fb261520cbf372b43' frameborder='0' style='height:256px;width:169px' marginwidth='0' marginheight='0' scrolling='auto'> </iframe>           </div>
-                        </div>
-    
-                        <div class="dropdown">
-                                <button class="dropbtn1">Lunch</button>
-                                <div class="dropdown-content">
-                                        <iframe src='https://docs.zoho.com/sheet/publishrange.do?id=831024724ff0bc1796b727652b748b6c' frameborder='0' style='height:317px;width:169px' marginwidth='0' marginheight='0' scrolling='auto'> </iframe>
+                    <div class="dropdown">
+                            <button class="dropbtn" data-toggle="modal" data-target="#myModal"> Breakfast</button>
+                            <div class="modal fade" id="myModal" role="dialog">
+                                <div class="modal-dialog modal-sm">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      <h4 class="modal-title">Sunday</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                       <table class="table table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th>Breakfast</th>
+                                    
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    
+                                    <td><iframe src='https://docs.zoho.com/sheet/publishrange.do?id=c0f7bfe953b65ca9c2a976209c9e103c' frameborder='0' style='height:208px;width:184px' marginwidth='0' marginheight='0' scrolling='auto'> </iframe></td>
+                             
+                                  </tr>
+                                  
+                                </tbody>
+                              </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                  </div>
                                 </div>
-                        </div>
-    
-                        <div class="dropdown">
-                                <button class="dropbtn2"> Snacks</button>
-                                <div class="dropdown-content">
-                                        <iframe src='https://docs.zoho.com/sheet/publishrange.do?id=b80405f0ae94eaaff96c701482e79045' frameborder='0' style='height:66px;width:169px' marginwidth='0' marginheight='0' scrolling='auto'> </iframe>
+                              </div>
+                           
+                            
+                    </div>
+
+                    <div class="dropdown">
+                            <button class="dropbtn1" data-toggle="modal" data-target="#myModal1"> Lunch</button>
+                            <div class="modal fade" id="myModal1" role="dialog">
+                                <div class="modal-dialog modal-sm">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      <h4 class="modal-title">Sunday</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                       <table class="table table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th>Lunch</th>
+                                    
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    
+                                    <td><iframe src='https://docs.zoho.com/sheet/publishrange.do?id=614481b76dba170c349e8f8a0bc49642' frameborder='0' style='height:284px;width:184px' marginwidth='0' marginheight='0' scrolling='auto'> </iframe></td>
+                             
+                                  </tr>
+                                  
+                                </tbody>
+                              </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                  </div>
                                 </div>
-                        </div>
-    
-                        <div class="dropdown">
-                                <button class="dropbtn3"> Dinner</button>
-                                <div class="dropdown-content">
-                                        <iframe src='https://docs.zoho.com/sheet/publishrange.do?id=6b09dd40e367f003e962979431aaec65' frameborder='0' style='height:302px;width:169px' marginwidth='0' marginheight='0' scrolling='auto'> </iframe>                          </div>
-                        </div>
+                              </div>
+                            
+                    </div>
+
+                    <div class="dropdown">
+                            <button class="dropbtn2" data-toggle="modal" data-target="#myModal2"> Snacks</button>
+                            <div class="modal fade" id="myModal2" role="dialog">
+                                <div class="modal-dialog modal-sm">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      <h4 class="modal-title">Sunday</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                       <table class="table table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th>Snacks</th>
+                                    
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    
+                                    <td><iframe src='https://docs.zoho.com/sheet/publishrange.do?id=55100e8e5fc2478f94e484e59dd4b69e' frameborder='0' style='height:78px;width:184px' marginwidth='0' marginheight='0' scrolling='auto'> </iframe></td>
+                             
+                                  </tr>
+                                  
+                                </tbody>
+                              </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            
+                    </div>
+
+                    <div class="dropdown">
+                            <button class="dropbtn3" data-toggle="modal" data-target="#myModal3"> Dinner</button>
+                            <div class="modal fade" id="myModal3" role="dialog">
+                                <div class="modal-dialog modal-sm">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                      <h4 class="modal-title">Sunday</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                       <table class="table table-bordered">
+                                <thead>
+                                  <tr>
+                                    <th>Dinner</th>
+                                    
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    
+                                    <td><iframe src='https://docs.zoho.com/sheet/publishrange.do?id=e1bc2e651fe95979bef02d07c9141345' frameborder='0' style='height:282px;width:184px' marginwidth='0' marginheight='0' scrolling='auto'> </iframe></td>
+                             
+                                  </tr>
+                                  
+                                </tbody>
+                              </table>
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                            </div>
+                            
+                </div>
     </div>
 
     
@@ -131,6 +253,7 @@
     border: none;
     cursor: pointer;
 }
+
 
 .dropdown {
     position: relative;
