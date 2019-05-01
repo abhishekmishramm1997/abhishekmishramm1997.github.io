@@ -1,0 +1,438 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset='utf-8' />
+  <title>Busiest Airports of India</title>
+  <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+  <script src='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+  <link href='https://api.tiles.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+  <script src='main.js'></script>
+  <link href='main.css' rel='stylesheet' />
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://code.jquery.com/mobile/1.4.5/jquery.mobile-1.4.5.min.css">
+  
+  
+
+  <style>
+      .redtext {
+    color: red;}
+    .purple {
+        color: 	#8A2BE2;
+    }
+    .green{
+        color: green;
+    }
+    .black{
+        color: black;    }
+
+
+
+        body {font-family: Arial, Helvetica, sans-serif;}
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  position: relative;
+  background-color: #fefefe;
+  margin: auto;
+  padding: 0;
+  border: 1px solid #888;
+  width: 80%;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+  -webkit-animation-name: animatetop;
+  -webkit-animation-duration: 0.4s;
+  animation-name: animatetop;
+  animation-duration: 0.4s
+}
+
+/* Add Animation */
+@-webkit-keyframes animatetop {
+  from {top:-300px; opacity:0} 
+  to {top:0; opacity:1}
+}
+
+@keyframes animatetop {
+  from {top:-300px; opacity:0}
+  to {top:0; opacity:1}
+}
+
+/* The Close Button */
+.close {
+  color: white;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.modal-header {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+.modal-body {padding: 2px 16px;}
+
+.modal-footer {
+  padding: 2px 16px;
+  background-color: #5cb85c;
+  color: white;
+}
+
+table {
+  width:100%;
+}
+table, th, td {
+  border: 1px solid black;
+  border-collapse: collapse;
+}
+th, td {
+  padding: 5px;
+  text-align: left;
+}
+table#t01 tr:nth-child(even) {
+  background-color: #eee;
+}
+table#t01 tr:nth-child(odd) {
+  background-color:#fff;
+}
+table#t01 th {
+  background-color: black;
+  color: white;
+}
+
+.button {
+  background-color: #f44336; /* Red */
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+.button1 {
+  background-color: #9836F4; /* Purple*/
+  border: none;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+
+}
+
+* {
+  box-sizing: border-box;
+}
+
+.zoom {
+  padding: 50px;
+  transition: transform .2s;
+  width: 200px;
+  height: 200px;
+  margin: 0 auto;
+}
+
+.zoom:hover {
+  -ms-transform: scale(3.0); /* IE 9 */
+  -webkit-transform: scale(3.0); /* Safari 3-8 */
+  transform: scale(3.0); 
+}
+
+
+      </style>
+      
+</head>
+<body>
+<div id='map'></div>
+<div id='features'>
+  <section id='part-1' class='active'>
+    <h3>TOP 10 HOTEL IN BANGKOK, KUALA LAMPUR, MALAYSIA (POLARITY-WISE)</h3>
+    <p> Trunk Roads are <a class="purple">purple</a> from far, <a class="redtext">red</a> when zoomed in. </p>
+    <p>Primary city roads are <a class="black"><b></b>black</a> from far, <a class="green">green</a> when zoomed in.</p>
+
+    <!-- Trigger/Open The Modal -->
+<button id="myBtn" class="button">Tap Me to view Dataset!</button>
+
+<a href="Assignment 2.docx"><button class="button1">Click to view Report!</button></a>
+
+
+
+
+<script>
+// Get the modal
+var modal = document.getElementById('myModal');
+
+// Get the button that opens the modal
+var btn = document.getElementById("myBtn");
+
+// Get the <span> element that closes the modal
+var span = document.getElementsByClassName("close")[0];
+
+// When the user clicks the button, open the modal 
+btn.onclick = function() {
+  modal.style.display = "block";
+}
+
+// When the user clicks on <span> (x), close the modal
+span.onclick = function() {
+  modal.style.display = "none";
+}
+
+// When the user clicks anywhere outside of the modal, close it
+window.onclick = function(event) {
+  if (event.target == modal) {
+    modal.style.display = "none";
+  }
+}
+</script>
+
+
+  </section>
+<section id='part-2'>
+    <hr>
+    <h3> Oriental Heritage Residence, 1180 Charoen Krung Road Bangrak, Bangrak, Bang Rak, 10500 Bangkok, Thailand
+
+    </h3>
+    <hr>
+  </section>
+  <section id='part-3'>
+    <hr>
+    <h3> Anantara Siam Bangkok Hotel, 155 Rajadamri Road, Siam, Pathumwan, 10330 Bangkok, Thailand
+
+  
+    </h3>
+    <hr>     
+  
+  </section>
+  <section id='part-4'>
+    <hr>
+    <h3>Luxury Suite @ BTS Nana, 12 Soi 15 Sukhumvit, Klongtoynua, Wattana, Wattana, 10110 Bangkok, Thailand
+
+    </h3>
+    <hr>
+  </section>
+  <section id='part-5'>
+    <hr>
+    <h3> Le Meridien Bangkok, 40/5 Surawong Road, Silom, Bang Rak, 10500 Bangkok, Thailand
+
+      </h3>
+    <hr>
+  </section>
+  <section id='part-6'>
+    <hr>
+    <h3>Marwin Villa, 37 Soi Petchaburi 15 Phayathai Road, Ratchatewi, Phayathai, Pathumwan, 10400 Bangkok, Thailand
+
+      </h3>
+    <hr>
+  
+  </section><section id='part-7'>
+    <hr>
+    <h3> Adelphi Grande Sukhumvit, 16 Sukhumvit Soi 41, Wattana, 10110 Bangkok, Thailand
+
+      </h3>
+    <hr>    
+  
+  </section><section id='part-8'>
+    <hr>
+    <h3>The Landmark Bangkok, 138 Sukhumvit Road, 10110 Bangkok, Thailand
+      </h3>
+    <hr>
+  
+  
+  </section>
+
+  <section id='part-9'>
+        <hr>
+        <h3>Amber Boutique Silom, 200 Soi Silom 14, Suriyawong, Bang Rak, 10500 Bangkok, Thailand
+          </h3>
+        <hr>
+      </section> 
+      <section id='part-1O'>
+    <hr>
+    <h3>Hotel Icon Bangkok Sukhumvit, 49 Sukhumvit Road Soi 2, Klongteay Nua, Wattana, Khlong Toei, 10110 Bangkok, Thailand
+      </h3>
+    <hr>
+  </section>
+  <section id='part-11'>
+    <hr>
+    <h3>Park Hyatt Bangkok, Central Embassy, 88 Wireless Road, Lumpini, Pathumwan, Pathumwan, 10330 Bangkok, Thailand
+
+  
+    </h3>
+    <hr>
+  </section>
+    
+<section id='part-12'>
+  <hr>
+  <h3> Villa Samadhi Kuala Lumpur - By Samadhi, No. 8, Jalan Madge, Off Persiaran Madge, Jalan U-Thant, 55000 Kuala Lumpur, Malaysia
+          </h3>
+  <hr>
+</section>
+<section id='part-13'>
+  <hr>
+  <h3>        Grand Hyatt Kuala Lumpur, 12, Jalan Pinang, 50450 Kuala Lumpur, Malaysia
+
+  </h3>
+  <hr>     
+
+</section>
+<section id='part-14'>
+  <hr>
+  <h3>Le Meridien Kuala Lumpur, 2 Jalan Stesen Sentral, Kuala Lumpur Sentral, 50470 Kuala Lumpur, Malaysia
+        
+  </h3>
+  <hr>
+</section>
+<section id='part-15'>
+  <hr>
+  <h3>         E&O Residences Kuala Lumpur, No 1, Jalan Tengah, Off Jalan Sultan Ismail, 50450 Kuala Lumpur, 50450 Kuala Lumpur, Malaysia
+
+    </h3>
+  <hr>
+</section>
+<section id='part-16'>
+  <hr>
+  <h3>Pavilion Hotel Kuala Lumpur Managed by Banyan Tree, 170 Jalan Bukit Bintang, Bukit Bintang, 55100 Kuala Lumpur, Malaysia
+
+    </h3>
+  <hr>
+
+</section><section id='part-17'>
+  <hr>
+  <h3> Banyan Tree Kuala Lumpur, 02 Jalan Conlay, Bukit Bintang, 50450 Kuala Lumpur, Malaysia
+
+    </h3>
+  <hr>    
+
+</section><section id='part-18'>
+  <hr>
+  <h3>Four Seasons Hotel Kuala Lumpur, 145, Jalan Ampang, 50450 Kuala Lumpur, Malaysia   </h3>
+  <hr>
+
+
+</section>
+<section id='part-19'>
+  <hr>
+  <h3> Shangri-La Hotel Kuala Lumpur, 11 Jalan Sultan Ismail, 50250 Kuala Lumpur, Malaysia
+
+    </h3>
+  <hr>
+</section>
+<section id='part-20'>
+  <hr>
+  <h3> Shangri-La Hotel Kuala Lumpur, 11 Jalan Sultan Ismail, 50250 Kuala Lumpur, Malaysia
+
+    </h3>
+  <hr>
+</section>
+<section id='part-21'>
+  <hr>
+  <h3>Soho Suites @ KLCC by Luxury Suites Asia, Jalan Perak, KLCC, 50450 Kuala Lumpur, Malaysia
+
+  </h3>
+  <hr>
+</section>
+<section id='part-22'>
+<hr>
+<h3>Ace Manor, 2 Ava Road, Novena, 329951 , Singapore
+</h3>
+<hr>
+</section>
+<section id='part-23'>
+<hr>
+<h3>The Fullerton Bay Hotel Singapore, 80 Collyer Quay, Marina Bay, 049326 , Singapore
+
+</h3>
+<hr>
+</section>
+<section id='part-24'>
+<hr>
+<h3>Rabbit Carrot Gun, 49 East Coast Road, Katong, 428768 , Singapore
+
+</h3>
+<hr>
+</section>
+<section id='part-25'>
+<hr>
+<h3>Hotel Indigo Singapore Katong, 86 East Coast Road, Katong, 428788 , Singapore
+
+</h3>
+<hr>
+</section>
+<section id='part-26'>
+<hr>
+<h3>Park Hotel Alexandra, 323 Alexandra Road, 159972 , Singapore
+
+</h3>
+<hr>
+</section>
+<section id='part-27'>
+<hr>
+<h3>Bay Hotel Singapore, 50 Telok Blangah Road, 098828 , Singapore
+
+</h3>
+<hr>
+</section>
+<section id='part-28'>
+<hr>
+<h3>Mandarin Oriental, Singapore, 5 Raffles Avenue, Marina Square, Marina Bay, 039797 , Singapore
+
+</h3>
+<hr>
+</section>
+<section id='part-29'>
+<hr>
+<h3>Resorts World Sentosa - Equarius Hotel, 8 Sentosa Gateway, Sentosa Island, 098269 , Singapore
+
+</h3>
+<hr>
+</section>
+<section id='part-30'>
+<hr>
+<h3>Carlton Hotel Singapore, 76 Bras Basah Road, City Hall, 189558 , Singapore
+
+</h3>
+<hr>
+</section>
+<section id='part-31'>
+<hr>
+<h3>Shangri-La's Rasa Sentosa Resort & Spa, 101 Siloso Road, Sentosa Island, 098970 , Singapore
+
+</h3>
+<hr>
+</section>
+                                                                                  
+</div>
+<script>
+
+</script>
+
+</body>
+</html>
