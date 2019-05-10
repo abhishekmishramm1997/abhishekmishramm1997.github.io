@@ -3,7 +3,7 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicnByYW5hdjIyIiwiYSI6ImNqZHlpcm0ycTBnYzgyd29le
 var chapters = {
     'part-1': {
         center: [100, 13],
-        zoom: 3.5,
+        zoom: 15,
         bearing: 0,
         pitch: 0,
     }, 
