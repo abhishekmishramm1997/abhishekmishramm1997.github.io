@@ -16,7 +16,13 @@
 
     <link rel="stylesheet" href="css/bootstrap-datepicker.css">
     <link rel="stylesheet" href="css/jquery.timepicker.css">
-
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+    <link rel="manifest" href="/site.webmanifest">
+    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
     
 
     <link rel="stylesheet" href="css/icomoon.css">
@@ -45,6 +51,51 @@
       </div>
     </nav>
     <!-- END nav -->
+
+    <script src="/upup.min.js"></script>
+    <script>
+      UpUp.start({
+        'content-url': 'index.html'
+      });
+    </script>
+
+    <button onclick="install()">
+      Install
+    </button>
+
+    <script>
+    
+    
+    let deferredPrompt = null;
+
+window.addEventListener('beforeinstallprompt', (e) => {
+  // Prevent Chrome 67 and earlier from automatically showing the prompt
+  e.preventDefault();
+  // Stash the event so it can be triggered later.
+  deferredPrompt = e;
+});
+
+async function install() {
+  if (deferredPrompt) {
+    deferredPrompt.prompt();
+    console.log(deferredPrompt)
+    deferredPrompt.userChoice.then(function(choiceResult){
+
+      if (choiceResult.outcome === 'accepted') {
+      console.log('Your PWA has been installed');
+    } else {
+      console.log('User chose to not install your PWA');
+    }
+
+    deferredPrompt = null;
+
+    });
+
+ 
+  }
+}
+
+    </script>
 
     <section class="site-cover" style="background-image: url(images/bg_3.jpg);" id="section-home">
       <div class="container">
