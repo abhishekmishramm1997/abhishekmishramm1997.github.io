@@ -1,21 +1,25 @@
 {
-    "name": "App-pe-diet",
-    "short_name" : "PWA",
-    "start_url": "index.html?utm_source=homescreen",
-    "scope" : "./",
-    "icons": [
-        {
-            "src": "./android-chrome-192x192.png",
-            "sizes": "192x192",
-            "type": "image/png"
-        },
-        {
-            "src": "./android-chrome-512x512.png",
-            "sizes": "512x512",
-            "type": "image/png"
-        }
-    ],
-    "theme_color": "#ffee00",
-    "background_color": "#ffee00",
-    "display": "standalone"
+	"dir" : "ltr",
+	"lang" : "en",
+	"name" : "App-Pe-Diet",
+	"scope" : "/eatwell/",
+	"display" : "browser",
+	"start_url" : "https://abhishekmishramm1997.github.io/eatwell/",
+	"short_name" : "App-Pe-Diet",
+	"theme_color" : "transparent",
+	"description" : "",
+	"orientation" : "any",
+	"background_color" : "transparent",
+	"related_applications" : "",
+	"prefer_related_applications" : "false",
+	"icons" : [
+		{
+			"src": "https://abhishekmishramm1997.github.io/eatwell/favicon.ico",
+			"sizes": "48x48 32x32 16x16"
+		},
+		{
+			"src": "https://abhishekmishramm1997.github.io/eatwell/mstile-150x150.png",
+			"sizes": "150x150"
+		}],
+	"generated" : "true"
 }
