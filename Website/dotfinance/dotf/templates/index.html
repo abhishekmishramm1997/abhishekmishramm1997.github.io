@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+  <link href='https://fonts.googleapis.com/css?family=Raleway' rel='stylesheet'>
+<style>
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Raleway, Helvetica, sans-serif;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #003456;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: ##003456;
+  color: black;
+}
+
+.header a.active {
+  background-color: #003456;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}
+</style>
+</head>
+<title>Dot Finance
+</title>
+
+<body>
+
+<div class="header">
+  <a href="/dotf/" class="logo"><font style="color:white;">DOT </font><font style="color:cyan">FINANCE</font></a>
+  <div class="header-right">
+    <a class="active" href="/dotf/industry"><font style="color:white;">Industries</font></a>
+    <a href="/dotf/stocks"><font style="color:white;">Stocks</font></a>
+    <a href="/dotf/about"><font style="color:white;">About Us</font></a>
+    <a href="/dotf/join"><font style="color:white;">Join Us</font></a>
+    <a href="/dotf/login"><font style="color:white;">Login</font></a>
+  </div>
+</div>
+
+<style>
+body {
+  font-family: "Lato", sans-serif;
+}
+
+.sidenav {
+  width: 300px;
+  position: fixed;
+  z-index: 1;
+  top: 250px;
+  left: 0px;
+  background: white;
+  overflow-x: hidden;
+  padding: 8px 0;
+  left:20px;
+}
+
+.main {
+  margin-left: 140px; /* Same width as the sidebar + left position in px */
+  font-size: 22px; /* Increased text to enable scrolling */
+  padding: 0px 10px;
+}
+
+.center-block {
+  display: block;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.left {
+
+	margin-left: 100px;
+}
+
+.rightnav {
+	position: fixed;
+	top: 450px;
+	z-index: 1;
+	right: 30px;
+	background: white;
+	overflow-x: hidden;
+ 	padding: 8px 0;
+}
+
+@media screen and (max-height: 450px) {
+  .sidenav {padding-top: 15px;}
+  .sidenav a {font-size: 18px;}
+}
+.dropbtn {
+  background-color:white;
+  color: black;
+  padding: 0px;
+  border: none;
+  align-content: left;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: white;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 10px 10px;
+  text-decoration: none;
+  display: block;
+  width: 100px;
+}
+
+.dropdown-content a:hover {background-color: #003456;}
+
+.dropdown:hover .dropdown-content {display: inline-block;}
+
+.dropdown:hover .dropbtn {background-color: none;}
+
+</style>
+
+
+<form name="search_box_form" method="POST">
+
+  <br><br>
+  <input class="center-block" type="text" name="search_box" size="50"><br><br>
+  <input class= "center-block" type="submit" value="Dot Search">
+
+</form>
+  
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+{% for item in items %}
+  <div style="border-style: solid;">
+  {% for key,value in item.items() %}
+        <p>{{ key }} : {{ value }}</p>
+  {% end %}
+  </div>
+{% end %}
+
+<style>
+* {box-sizing: border-box;}
+
+body { 
+  margin: 0;
+  font-family: Raleway, Helvetica, sans-serif;
+}
+
+.header {
+  overflow: hidden;
+  background-color: #003456;
+  padding: 20px 10px;
+}
+
+.header a {
+  float: left;
+  color: black;
+  text-align: center;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px; 
+  line-height: 25px;
+  border-radius: 4px;
+}
+
+.header a.logo {
+  font-size: 25px;
+  font-weight: bold;
+}
+
+.header a:hover {
+  background-color: ##003456;
+  color: black;
+}
+
+.header a.active {
+  background-color: #003456;
+  color: white;
+}
+
+.header-right {
+  float: right;
+}
+
+@media screen and (max-width: 500px) {
+  .header a {
+    float: none;
+    display: block;
+    text-align: left;
+  }
+  
+  .header-right {
+    float: none;
+  }
+}
+</style>
+
+<div class="header">
+  <a href="/dotf/" class="logo"><font style="color:white;">Copyright @Sohnny Jins</font></a>
+  <div class="header-right">
+    <a class="active" href="/dotf/terms"><font style="color:white;">Terms of Use</font></a>
+    <a href="/dotf/privacy"><font style="color:white;">Privacy Policy</font></a>
+    <a href="/dotf/team"><font style="color:white;">Team</font></a>
+    <a href="/dotf/review"><font style="color:white;">Feedback</font></a>
+    <a href="/dotf/contact"><font style="color:white;">Contact Us</font></a>
+    <a href="/dotf/beta"><font style="color:white;">Beta</font></a>
+  </div>
+</div>
+</body>
+</html>
